@@ -1112,32 +1112,32 @@
       { imgSrc: "./images/벤_데이비스.webp", answer: "벤 데이비스" },
       { imgSrc: "./images/미키_반더벤.webp", answer: "미키 반더벤" },
       // 웨스트햄
-      { imgSrc: "./images/우카시_파비안스키.webp", answer: "" },
-      { imgSrc: "./images/애런_크레스웰.webp", answer: "" },
-      { imgSrc: "./images/카를로스_솔레르.webp", answer: "" },
-      { imgSrc: "./images/블라디미르_초우팔.webp", answer: "" },
-      { imgSrc: "./images/크리센시오_서머빌.webp", answer: "" },
-      { imgSrc: "./images/미카일_안토니오.webp", answer: "" },
-      { imgSrc: "./images/루카스_파케타.webp", answer: "" },
-      { imgSrc: "./images/니클라스_퓔크루크.webp", answer: "" },
-      { imgSrc: "./images/무함마드_쿠두스.webp", answer: "" },
+      { imgSrc: "./images/우카시_파비안스키.webp", answer: "우카시 파비안스키" },
+      { imgSrc: "./images/애런_크레스웰.webp", answer: "애런 크레스웰" },
+      { imgSrc: "./images/카를로스_솔레르.webp", answer: "카를로스 솔레르" },
+      { imgSrc: "./images/블라디미르_초우팔.webp", answer: "블라디미르 초우팔" },
+      { imgSrc: "./images/크리센시오_서머빌.webp", answer: "크리센시오 서머빌" },
+      { imgSrc: "./images/미카일_안토니오.webp", answer: "미카일 안토니오" },
+      { imgSrc: "./images/루카스_파케타.webp", answer: "루카스 파케타" },
+      { imgSrc: "./images/니클라스_퓔크루크.webp", answer: "니콜라스 퓔크루크" },
+      { imgSrc: "./images/무함마드_쿠두스.webp", answer: "무함마드 쿠두스" },
       {
         imgSrc: "./images/콘스탄티노스_마브로파노스.webp",
-        answer: "",
+        answer: "콘스탄티노스 마브로파노스",
       },
-      { imgSrc: "./images/루이스_길례르미.webp", answer: "" },
-      { imgSrc: "./images/대니_잉스.webp", answer: "" },
-      { imgSrc: "./images/에드손_알바레스.webp", answer: "" },
-      { imgSrc: "./images/재러드_보언.webp", answer: "" },
-      { imgSrc: "./images/알퐁스_아레올라.webp", answer: "" },
-      { imgSrc: "./images/기도_로드리게스.webp", answer: "" },
-      { imgSrc: "./images/장클레르_토디보.webp", answer: "" },
-      { imgSrc: "./images/막스_킬먼.webp", answer: "" },
-      { imgSrc: "./images/토마시_소우체크.webp", answer: "" },
-      { imgSrc: "./images/애런_완비사카.webp", answer: "" },
-      { imgSrc: "./images/에메르송_팔미에리.webp", answer: "" },
-      { imgSrc: "./images/루이장.webp", answer: "" },
-      { imgSrc: "./images/앤디_어빙.webp", answer: "" },
+      { imgSrc: "./images/루이스_길례르미.webp", answer: "루이스 길례르미" },
+      { imgSrc: "./images/대니_잉스.webp", answer: "대니 잉스" },
+      { imgSrc: "./images/에드손_알바레스.webp", answer: "에드손 알바레스" },
+      { imgSrc: "./images/재러드_보언.webp", answer: "재러드 보언" },
+      { imgSrc: "./images/알퐁스_아레올라.webp", answer: "알퐁스 아레올라" },
+      { imgSrc: "./images/기도_로드리게스.webp", answer: "기도 로드리게스" },
+      { imgSrc: "./images/장클레르_토디보.webp", answer: "장클레르 토디보" },
+      { imgSrc: "./images/막스_킬먼.webp", answer: "막스 킬먼" },
+      { imgSrc: "./images/토마시_소우체크.webp", answer: "토마시 소우체크" },
+      { imgSrc: "./images/애런_완비사카.webp", answer: "애런 완비사카" },
+      { imgSrc: "./images/에메르송_팔미에리.webp", answer: "에메르송 팔미에리" },
+      { imgSrc: "./images/루이장.webp", answer: "루이장" },
+      { imgSrc: "./images/앤디_어빙.webp", answer: "앤디 어빙" },
       // 울버햄튼
       { imgSrc: "./images/주제_사.webp", answer: "주제 사" },
       { imgSrc: "./images/맷_도허티.webp", answer: "맷 도허티" },
@@ -1242,6 +1242,7 @@
     let checkAnswer = (userAnswer, correctAnswer) => {
       footerContainer.innerHTML = "";
       const answerBox = document.createElement("div");
+      answerBox.style.color = "white";
       if (
         correctAnswer
           .replace(/\s+/g, "")
@@ -1249,19 +1250,15 @@
           .endsWith(userAnswer.replace(/\s+/g, "").toLowerCase())
       ) {
         answerBox.innerHTML = `정답! <br> ${correctAnswer}`;
-        answerBox.style.color = "white";
+
         score++;
       } else {
         answerBox.innerHTML = `오답! <br> ${correctAnswer}`;
       }
       footerContainer.appendChild(answerBox);
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-          nextQuiz();
-          document.removeEventListener("keydown", arguments.callee); // 중복 방지
-        }
-      });
+      setTimeout(() => {
+        nextQuiz();
+      }, 1000);
     };
 
     let finishQuiz = (event) => {
