@@ -127,6 +127,7 @@
           src="./images/crystalpalace.png"
           alt=""
         />
+
         <img class="content3-logo-img" src="./images/everton.png" alt="" />
         <img class="content3-logo-img" src="./images/fulham.png" alt="" />
         <img class="content3-logo-img" src="./images/ipswich.png" alt="" />
@@ -162,19 +163,34 @@
           (Ex. 살라, 홀란드, 외데고르)
         </p>
         <div class="content3-footer-button-container">
-          <button id="quize10-btn" class="btn content3-btn-color-white">
+          <button
+            id="quize10-btn"
+            class="content3-quiz-btn btn content3-btn-color-white"
+          >
             10개 풀기
           </button>
-          <button id="quize20-btn" class="btn content3-btn-color-white">
+          <button
+            id="quize20-btn"
+            class="content3-quiz-btn btn content3-btn-color-white"
+          >
             20개 풀기
           </button>
-          <button id="quize30-btn" class="btn content3-btn-color-white">
+          <button
+            id="quize30-btn"
+            class="content3-quiz-btn btn content3-btn-color-white"
+          >
             30개 풀기
           </button>
-          <button id="quize40-btn" class="btn content3-btn-color-white">
+          <button
+            id="quize40-btn"
+            class="content3-quiz-btn btn content3-btn-color-white"
+          >
             40개 풀기
           </button>
-          <button id="quize50-btn" class="btn content3-btn-color-white">
+          <button
+            id="quize50-btn"
+            class="content3-quiz-btn btn content3-btn-color-white"
+          >
             50개 풀기
           </button>
         </div>
@@ -182,13 +198,12 @@
     </footer>
   </body>
   <script>
-    const quiz10Btn = document.getElementById("quize10-btn");
     const mainContainer = document.querySelector(".content3-main-container");
     const footerContainer = document.querySelector(
       ".content3-footer-container"
     );
     let currentNumberOfQuiz = 0;
-    let totalNumberOfQuiz = 10;
+    let totalNumberOfQuiz = 0;
     let score = 0;
 
     const players = [
@@ -538,29 +553,71 @@
         answer: "나다니엘 클라인",
       },
       // 에버튼
-      { imgSrc: "./images/일리만_은디아예.webp", answer: "일리만 은디아예" },
+      {
+        imgSrc: "./images/일리만_은디아예.webp",
+        answer: "일리만 은디아예",
+      },
       { imgSrc: "./images/조던_픽포드.webp", answer: "조던 픽포드" },
-      { imgSrc: "./images/네이선_패터슨.webp", answer: "네이선 패터슨" },
+      {
+        imgSrc: "./images/네이선_패터슨.webp",
+        answer: "네이선 패터슨",
+      },
       { imgSrc: "./images/마이클_킨.webp", answer: "마이클 킨" },
-      { imgSrc: "./images/제임스_타코우스키.webp", answer: "제임스 타코우스키" },
-      { imgSrc: "./images/드와이트_맥닐.webp", answer: "드와이트 맥닐" },
+      {
+        imgSrc: "./images/제임스_타코우스키.webp",
+        answer: "제임스 타코우스키",
+      },
+      {
+        imgSrc: "./images/드와이트_맥닐.webp",
+        answer: "드와이트 맥닐",
+      },
       { imgSrc: "./images/오렐_망갈라.webp", answer: "오렐 망갈라" },
-      { imgSrc: "./images/도미닉_칼버트르윈.webp", answer: "도미닉 칼버트르윈" },
+      {
+        imgSrc: "./images/도미닉_칼버트르윈.webp",
+        answer: "도미닉 칼버트르윈",
+      },
       { imgSrc: "./images/잭_해리슨.webp", answer: "잭 해리슨" },
       { imgSrc: "./images/베투.webp", answer: "베투" },
-      { imgSrc: "./images/제이크_오브라이언.webp", answer: "제이크 오브라이언" },
-      { imgSrc: "./images/압둘라유_두쿠레.webp", answer: "압둘라유 두쿠레" },
-      { imgSrc: "./images/유세프_셰르미티.webp", answer: "유세프 셰르미티" },
+      {
+        imgSrc: "./images/제이크_오브라이언.webp",
+        answer: "제이크 오브라이언",
+      },
+      {
+        imgSrc: "./images/압둘라유_두쿠레.webp",
+        answer: "압둘라유 두쿠레",
+      },
+      {
+        imgSrc: "./images/유세프_셰르미티.webp",
+        answer: "유세프 셰르미티",
+      },
       { imgSrc: "./images/애슐리_영.webp", answer: "애슐리 영" },
-      { imgSrc: "./images/비탈리_미콜렌코.webp", answer: "비탈리 미콜렌코" },
-      { imgSrc: "./images/아르만도_브로야.webp", answer: "아르만도 브로야" },
+      {
+        imgSrc: "./images/비탈리_미콜렌코.webp",
+        answer: "비탈리 미콜렌코",
+      },
+      {
+        imgSrc: "./images/아르만도_브로야.webp",
+        answer: "아르만도 브로야",
+      },
       { imgSrc: "./images/셰머스_콜먼.webp", answer: "셰머스 콜먼" },
       { imgSrc: "./images/이드리사_게예.webp", answer: "이드리사 게예" },
-      { imgSrc: "./images/예스페르_린스트룀.webp", answer: "예스페르 린스트룀" },
-      { imgSrc: "./images/아스미르_베고비치.webp", answer: "아스미르 베고비치" },
-      { imgSrc: "./images/재러드_브랜스웨이트.webp", answer: "재러드 브랜스웨이트" },
+      {
+        imgSrc: "./images/예스페르_린스트룀.webp",
+        answer: "예스페르 린스트룀",
+      },
+      {
+        imgSrc: "./images/아스미르_베고비치.webp",
+        answer: "아스미르 베고비치",
+      },
+      {
+        imgSrc: "./images/재러드_브랜스웨이트.webp",
+        answer: "재러드 브랜스웨이트",
+      },
       { imgSrc: "./images/제임스_가너.webp", answer: "제임스 가너" },
-      { imgSrc: "./images/해리슨_암스트롱.webp", answer: "해리슨 암스트롱" },
+      {
+        imgSrc: "./images/해리슨_암스트롱.webp",
+        answer: "해리슨 암스트롱",
+      },
       // 풀럼
       { imgSrc: "./images/베른트_레노.webp", answer: "베른트 레노" },
       { imgSrc: "./images/케니_테테.webp", answer: "케니 테테" },
@@ -1112,30 +1169,78 @@
       { imgSrc: "./images/벤_데이비스.webp", answer: "벤 데이비스" },
       { imgSrc: "./images/미키_반더벤.webp", answer: "미키 반더벤" },
       // 웨스트햄
-      { imgSrc: "./images/우카시_파비안스키.webp", answer: "우카시 파비안스키" },
-      { imgSrc: "./images/애런_크레스웰.webp", answer: "애런 크레스웰" },
-      { imgSrc: "./images/카를로스_솔레르.webp", answer: "카를로스 솔레르" },
-      { imgSrc: "./images/블라디미르_초우팔.webp", answer: "블라디미르 초우팔" },
-      { imgSrc: "./images/크리센시오_서머빌.webp", answer: "크리센시오 서머빌" },
-      { imgSrc: "./images/미카일_안토니오.webp", answer: "미카일 안토니오" },
+      {
+        imgSrc: "./images/우카시_파비안스키.webp",
+        answer: "우카시 파비안스키",
+      },
+      {
+        imgSrc: "./images/애런_크레스웰.webp",
+        answer: "애런 크레스웰",
+      },
+      {
+        imgSrc: "./images/카를로스_솔레르.webp",
+        answer: "카를로스 솔레르",
+      },
+      {
+        imgSrc: "./images/블라디미르_초우팔.webp",
+        answer: "블라디미르 초우팔",
+      },
+      {
+        imgSrc: "./images/크리센시오_서머빌.webp",
+        answer: "크리센시오 서머빌",
+      },
+      {
+        imgSrc: "./images/미카일_안토니오.webp",
+        answer: "미카일 안토니오",
+      },
       { imgSrc: "./images/루카스_파케타.webp", answer: "루카스 파케타" },
-      { imgSrc: "./images/니클라스_퓔크루크.webp", answer: "니콜라스 퓔크루크" },
-      { imgSrc: "./images/무함마드_쿠두스.webp", answer: "무함마드 쿠두스" },
+      {
+        imgSrc: "./images/니클라스_퓔크루크.webp",
+        answer: "니콜라스 퓔크루크",
+      },
+      {
+        imgSrc: "./images/무함마드_쿠두스.webp",
+        answer: "무함마드 쿠두스",
+      },
       {
         imgSrc: "./images/콘스탄티노스_마브로파노스.webp",
         answer: "콘스탄티노스 마브로파노스",
       },
-      { imgSrc: "./images/루이스_길례르미.webp", answer: "루이스 길례르미" },
+      {
+        imgSrc: "./images/루이스_길례르미.webp",
+        answer: "루이스 길례르미",
+      },
       { imgSrc: "./images/대니_잉스.webp", answer: "대니 잉스" },
-      { imgSrc: "./images/에드손_알바레스.webp", answer: "에드손 알바레스" },
+      {
+        imgSrc: "./images/에드손_알바레스.webp",
+        answer: "에드손 알바레스",
+      },
       { imgSrc: "./images/재러드_보언.webp", answer: "재러드 보언" },
-      { imgSrc: "./images/알퐁스_아레올라.webp", answer: "알퐁스 아레올라" },
-      { imgSrc: "./images/기도_로드리게스.webp", answer: "기도 로드리게스" },
-      { imgSrc: "./images/장클레르_토디보.webp", answer: "장클레르 토디보" },
+      {
+        imgSrc: "./images/알퐁스_아레올라.webp",
+        answer: "알퐁스 아레올라",
+      },
+      {
+        imgSrc: "./images/기도_로드리게스.webp",
+        answer: "기도 로드리게스",
+      },
+      {
+        imgSrc: "./images/장클레르_토디보.webp",
+        answer: "장클레르 토디보",
+      },
       { imgSrc: "./images/막스_킬먼.webp", answer: "막스 킬먼" },
-      { imgSrc: "./images/토마시_소우체크.webp", answer: "토마시 소우체크" },
-      { imgSrc: "./images/애런_완비사카.webp", answer: "애런 완비사카" },
-      { imgSrc: "./images/에메르송_팔미에리.webp", answer: "에메르송 팔미에리" },
+      {
+        imgSrc: "./images/토마시_소우체크.webp",
+        answer: "토마시 소우체크",
+      },
+      {
+        imgSrc: "./images/애런_완비사카.webp",
+        answer: "애런 완비사카",
+      },
+      {
+        imgSrc: "./images/에메르송_팔미에리.webp",
+        answer: "에메르송 팔미에리",
+      },
       { imgSrc: "./images/루이장.webp", answer: "루이장" },
       { imgSrc: "./images/앤디_어빙.webp", answer: "앤디 어빙" },
       // 울버햄튼
@@ -1204,7 +1309,12 @@
     let startQuiz = (event) => {
       mainContainer.innerHTML = "";
       footerContainer.innerHTML = "";
-
+      // event.childNodes[0].nodeValue;
+      let buttonText = event.innerHTML;
+      console.log(buttonText);
+      console.log(typeof buttonText);
+      const regex = /[^0-9]/g;
+      totalNumberOfQuiz = buttonText.replace(regex, "");
       nextQuiz();
     };
 
@@ -1278,6 +1388,9 @@
       });
     };
 
-    quiz10Btn.addEventListener("click", startQuiz);
+    footerContainer.addEventListener("click", (event) => {
+      startQuiz(event.target);
+      console.log(event.target);
+    });
   </script>
 </html>
